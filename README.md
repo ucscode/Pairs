@@ -80,6 +80,14 @@ $value = $pairs->get('car', 2);
 
 This retrieves the value for the key "car" and reference 2.
 
+### Retrieve a Timestamp
+
+```php
+$value = $pairs->get('car', 2, true);
+```
+
+This retrieves the unix timestamp representing when the initial value for the specified key and reference was added to the database.
+
 ### Remove a Key-Value Pair
 
 ```php

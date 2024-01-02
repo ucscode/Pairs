@@ -40,7 +40,7 @@ The Pairs class allows you to create a meta table that consists of key-value pai
 
 ## Requirements
 
-- PHP 7.4 or higher
+- PHP 8.1 or higher
 - MySQLi extension
 - [sQuery](https://github.com/ucscode/squery) library (required for efficient query generation)
 

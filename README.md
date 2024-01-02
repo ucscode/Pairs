@@ -126,7 +126,7 @@ This sets up a `foreign constraint` where "`parentTableName`" becomes the parent
 
 ## Contributing
 
-Contributions are welcome! If you find any issues or have suggestions for improvements, please open an [issue](./issues) or submit a [pull request](./pulls) on the GitHub repository.
+Contributions are welcome! If you find any issues or have suggestions for improvements, please open an [issue](https://github.com/ucscode/Pairs/issues) or submit a [pull request](https://github.com/ucscode/Pairs/pulls) on the GitHub repository.
 
 ## License
 

@@ -2,6 +2,10 @@
 
 The Pairs library is a PHP tool designed to efficiently store and retrieve key-value pairs in a database. It provides a simple and flexible interface for managing data in a relational database. Below is a comprehensive guide on how to use the library.
 
+# Dedication
+
+This library was initially a part of [User Synthetics](https://github.com/ucscode/user-synthetics) project but was extracted to become a standalone project. 
+
 ## Table of Contents
 
 - [Introduction](#introduction)

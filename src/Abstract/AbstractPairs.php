@@ -27,7 +27,7 @@ abstract class AbstractPairs
      */
     public function setForeignConstraint(ForeignConstraint $foreignConstraint): ?bool
     {
-        $placeholder = "SELECT NULL 
+        $SQLSyntax = "SELECT NULL 
         FROM information_schema.TABLE_CONSTRAINTS 
         WHERE 
             CONSTRAINT_SCHEMA = DATABASE()  
@@ -36,14 +36,14 @@ abstract class AbstractPairs
             AND CONSTRAINT_TYPE = 'FOREIGN KEY'";
 
         $SQL = sprintf(
-            $placeholder,
+            $SQLSyntax,
             $this->table,
             $foreignConstraint->getConstraint()
         );
 
         if($this->mysqli?->query($SQL)?->num_rows === 0) {
 
-            $placeholder = "ALTER TABLE `%s`
+            $SQLSyntax = "ALTER TABLE `%s`
             MODIFY `_ref` %s %s %s,
             ADD CONSTRAINT `%s`
             FOREIGN KEY (`_ref`)
@@ -51,7 +51,7 @@ abstract class AbstractPairs
             ON DELETE %s";
 
             $SQL = sprintf(
-                $placeholder,
+                $SQLSyntax,
                 $this->table,
                 $foreignConstraint->getPrimaryKeyDataType(),
                 $foreignConstraint->isPrimaryKeyUnsigned() ? 'UNSIGNED' : null,
@@ -81,7 +81,8 @@ abstract class AbstractPairs
                 `_ref` INT,
                 `_key` VARCHAR(255) NOT NULL,
                 `_value` TEXT,
-                `epoch` BIGINT NOT NULL DEFAULT (UNIX_TIMESTAMP())
+                `epoch` BIGINT NOT NULL DEFAULT (UNIX_TIMESTAMP()),
+                UNIQUE(_ref, _key)
             )",
             $this->table
         );

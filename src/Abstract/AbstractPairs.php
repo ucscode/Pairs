@@ -82,7 +82,7 @@ abstract class AbstractPairs
                 `_key` VARCHAR(255) NOT NULL,
                 `_value` TEXT,
                 `epoch` BIGINT NOT NULL DEFAULT (UNIX_TIMESTAMP()),
-                UNIQUE(_ref, _key)
+                CONSTRAINT IDENTIFIER UNIQUE(_ref, _key)
             )",
             $this->table
         );
